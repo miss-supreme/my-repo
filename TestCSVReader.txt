@@ -1,0 +1,62 @@
+#include <iostream>
+#include <fstream>
+using std namespace;
+
+
+//Only outputs 1 line from 1 file.
+
+
+//Declares name of file to read from.
+ifstream file ( "geometry-test.csv");
+
+string input;
+
+int main()
+{
+	getline (cin,input);
+	testInput();
+	printFile();
+}
+
+
+
+void testInput()
+{
+	if (input == "TEST")
+		{
+			printFile();
+		}
+}
+
+
+string fileOut;
+
+void printFile()
+{
+
+	while (file.good() )  // Might need to test if file.good == true.
+	{
+		getline (file, fileOut, ",");
+		cout << fileOut;
+		endl;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
